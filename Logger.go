@@ -12,31 +12,36 @@ import "github.com/sirgallo/utils"
 //============================================= Logger
 
 
+// NewCustomLog
+//	Initilize a new custom logger.
+//
+// Parameters:
+//	name: the name of the log
+//
+// Returns:
+//	Initialized custom logger
 func NewCustomLog(name string) *CustomLog {
 	return &CustomLog{
 		Name: name,
 	}
 }
 
-/*
-	Debug, Error, Info, Warn:
-		different log levels
-*/
-
+// Debug, Error, Info, Warn:
+//	Different log levels.
 func (cLog *CustomLog) Debug(msg ...interface{}) {
-	go cLog.formatOutput(Debug, msg)
+	cLog.formatOutput(Debug, msg)
 } 
 
 func (cLog *CustomLog) Error(msg ...interface{}) {
-	go cLog.formatOutput(Error, msg)
+	cLog.formatOutput(Error, msg)
 } 
 
 func (cLog *CustomLog) Info(msg ...interface{}) {
-	go cLog.formatOutput(Info, msg)
+	cLog.formatOutput(Info, msg)
 } 
 
 func (cLog *CustomLog) Warn(msg ...interface{}) {
-	go cLog.formatOutput(Warn, msg)
+	cLog.formatOutput(Warn, msg)
 }
 
 func (cLog *CustomLog) Fatal(msg ...interface{}) {
@@ -44,13 +49,13 @@ func (cLog *CustomLog) Fatal(msg ...interface{}) {
 	os.Exit(1)
 }
 
-/*
-	Format Output:
-		helper method for each of the log levels
-		output is
-			(formatted time) [name] Log level: encoded message
-*/
-
+// formatOutput
+//	helper method for each of the log levels output is:
+//	(formatted time) [name] Log level: encoded message
+//
+// Parameters:
+//	level: the log level (debug, error, info, warn, fatal)
+//	msg: the message to be formatted
 func (cLog *CustomLog) formatOutput(level LogLevel, msg []interface{}) {
 	currTime := time.Now()
 	formattedTime := currTime.Format(TimeFormat)
