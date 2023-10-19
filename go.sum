@@ -1,0 +1,4 @@
+github.com/sirgallo/array v1.0.0 h1:FgZFP2rD/pqWMee3UkyRAlv2FtSAJS7GG9d+3K4I/ZI=
+github.com/sirgallo/array v1.0.0/go.mod h1:cUCcifD0EWyMBBpcoHM1Wp0YvW+xgEemKEPrXjt0k2k=
+github.com/sirgallo/utils v0.0.0-20231019215433-7b1227f34016 h1:mbZA76PRyeBRF3WdY7dNSt0TUsMgDPBtshcg06f8iKI=
+github.com/sirgallo/utils v0.0.0-20231019215433-7b1227f34016/go.mod h1:tleQ8/sC0WpcVgbQ6EehmbcC69HnYtIKIg0tObuzOH0=
